@@ -1,0 +1,5 @@
+alias ei='exit'
+alias gti='git'
+alias kc='kubectl'
+alias tf='terraform'
+alias vim='nvim'
