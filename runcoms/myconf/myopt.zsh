@@ -14,3 +14,13 @@ function fzf_z_search() {
 zle -N fzf_z_search
 bindkey '^f' fzf_z_search
 
+function fzf_file_search() {
+	local file=$(find ~ | fzf)
+	if [ -n "$file" ]; then
+		BUFFER="$(echo $BUFFER) $file"
+		CURSOR=$#BUFFER
+		zle redisplay
+	fi
+}
+zle -N fzf_file_search
+bindkey '^s' fzf_file_search
