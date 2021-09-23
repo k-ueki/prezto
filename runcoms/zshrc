@@ -14,7 +14,10 @@ fi
 
 source ${HOME}/z/z.sh 
 
-source ${HOME}/.zprezto/runcoms/alias
+source ${HOME}/.zprezto/runcoms/myconf/alias
+source ${HOME}/.zprezto/runcoms/myconf/git_fzf.zsh
+source ${HOME}/.zprezto/runcoms/myconf/myopt.zsh
+
 
 # google-cloud-sdk
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
