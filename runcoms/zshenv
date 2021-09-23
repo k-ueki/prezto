@@ -17,8 +17,11 @@ export PATH="${HOME}/.scalaenv/bin:${PATH}"
 
 export LSCOLORS=cxfxcxdxbxGxDxabagacad
 
-eval "$(scalaenv init -)"
 export GOPATH=~/go
 export JENV_SHELL=zsh
 export JENV_LOADED=1
 unset JAVA_HOME
+
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_OPTS='--reverse --preview "bat --color=always --style=header,grid --line-range :100 {}"'
+export FZF_CTRL_R_OPTS='--reverse'

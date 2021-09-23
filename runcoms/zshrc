@@ -1,3 +1,11 @@
+
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+#
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -8,7 +16,8 @@ source ${HOME}/z/z.sh
 source ${HOME}/.zprezto/runcoms/myconf/alias
 source ${HOME}/.zprezto/runcoms/myconf/git_fzf.zsh
 source ${HOME}/.zprezto/runcoms/myconf/myopt.zsh
-source ${HOME}/.zprezto/runcoms/myconf/tmux_conf
+source $HOME/.zprezto/runcoms/myconf/tmux_conf
+tmux_automatically_attach_session
 
 # google-cloud-sdk
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
@@ -16,13 +25,14 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
 
-
-tmux_automatically_attach_session
-
 # export GOENV_ROOT="$HOME/.goenv"
 # export PATH="$GOENV_ROOT/bin:$PATH"
 # eval "$(goenv init -)"
 go env -w GOPRIVATE=github.com/ajainc,ghe.ca-tools.org
+
+eval "$(scalaenv init -)"
+eval export PATH="/Users/s11308/.jenv/shims:${PATH}"
+unset JAVA_HOME
 
 source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
 jenv rehash 2>/dev/null
